@@ -7,6 +7,7 @@ import 'package:math_keyboard/src/widgets/decimal_separator.dart';
 import 'package:math_keyboard/src/widgets/keyboard_button.dart';
 import 'package:math_keyboard/src/widgets/math_field.dart';
 import 'package:math_keyboard/src/widgets/view_insets.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
 
 /// Enumeration for the types of keyboard that a math keyboard can adopt.
 ///
@@ -224,7 +225,9 @@ class _KeyboardBodyState extends State<_KeyboardBody> {
   @override
   Widget build(BuildContext context) {
     _reportInsets(widget.insetsState);
-    return widget.child;
+    return PointerInterceptor(
+      child: widget.child,
+    );
   }
 }
 
