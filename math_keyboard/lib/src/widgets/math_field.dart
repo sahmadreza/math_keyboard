@@ -645,11 +645,14 @@ class _FieldPreview extends StatelessWidget {
                     // when the math field is empty. This way it matches the
                     // TextField behavior.
                     : Offset(-1, 0),
-                child: Math.tex(
-                  tex,
-                  options: MathOptions(
-                    fontSize: MathOptions.defaultFontSize,
-                    color: Theme.of(context).colorScheme.onSurface,
+                child: Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: Math.tex(
+                    tex,
+                    options: MathOptions(
+                      fontSize: MathOptions.defaultFontSize,
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
                   ),
                 ),
               ),

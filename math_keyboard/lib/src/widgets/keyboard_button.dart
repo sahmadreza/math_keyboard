@@ -111,9 +111,11 @@ class _KeyboardButtonState extends State<KeyboardButton>
                           3,
                     ),
                   ),
-                  child: Center(
-                    child: child,
-                  ),
+                  child: Directionality(
+                      textDirection: TextDirection.ltr,
+                      child: Center(
+                        child: child,
+                      )),
                 );
               },
               child: widget.child,
